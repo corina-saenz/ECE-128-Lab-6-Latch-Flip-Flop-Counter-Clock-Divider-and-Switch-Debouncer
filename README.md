@@ -6,13 +6,13 @@ Course: ECE 128 – FPGA Laboratory
 Board: Digilent Basys3 (Xilinx Artix-7 XC7A35T)
 
 
-# Overview
+### Overview
 This lab explores fundamental sequential logic components implemented using Verilog HDL on the Basys3 FPGA.
 The designs include latches, flip-flops, a 3-bit counter, a frequency divider, and a switch debouncer.
 Each module was written, simulated in Vivado, and analyzed through power and resource utilization reports.
 
 
-# Objectives
+### Objectives
 - Design and simulate an SR latch and SR flip-flop.
 - Implement synchronous and asynchronous D flip-flops.
 - Design a T flip-flop and use it to create a 3-bit counter.
@@ -20,7 +20,7 @@ Each module was written, simulated in Vivado, and analyzed through power and res
 - Implement a switch debouncer and test it on the Basys3 board using a push button and an LED output.
 
 
-# Module Summary
+### Module Summary
 Module	Description
 sr_latch.v        Cross-coupled NOR-based SR latch for basic storage demonstration.
 sr_ff.v           Edge-triggered SR flip-flop; updates on rising clock edges.
@@ -33,7 +33,7 @@ debouncer.v	      Push button debouncer using a two-flop synchronizer and counte
 top_debouncer.v	  Top-level module for hardware testing (button input → debounced LED output).
 
 
-# Simulation Results
+### Simulation Results
 - All simulations were performed in Vivado 2023.1.
 - SR latch verified correct set/reset/hold behavior.
 - Flip-flops responded correctly to clock and reset signals.
@@ -44,7 +44,7 @@ top_debouncer.v	  Top-level module for hardware testing (button input → deboun
 Waveforms and timing diagrams for each module are included in the /sim directory and in the lab report appendix.
 
 
-# FPGA Implementation
+### FPGA Implementation
 Only the debouncer was implemented on the physical Basys3 board.
 Connections were made as follows:
 
@@ -56,7 +56,7 @@ Q[0]	           U16	          LED0 output (debounced signal)
 When the button is pressed and released, the LED turns on and off once per press, with no flicker, confirming proper debounce behavior.
 
 
-# Usage Instructions
+### Usage Instructions
 
 1- Open Vivado Project
     - Create a new Vivado project.
@@ -75,7 +75,7 @@ When the button is pressed and released, the LED turns on and off once per press
     - Open Hardware Manager → Program Device.
     - Press BTNC to observe the debounced LED behavior.
 
-# Results and Observations
+### Results and Observations
 - Each sequential design performed as expected in simulation.
 - Resource utilization remained below 0.1% for all modules.
 - The clock divider and debouncer consumed the most dynamic power.
